@@ -1,0 +1,173 @@
+/* Scroll Bar */
+
+body {
+  --sb-track-color: #e6e6e6;
+  --sb-thumb-color: #5d5c5c;
+  --sb-size: 9px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+body,
+h1,
+h2,
+p,
+form,
+label,
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background-color: #e6e6e6;
+  color: #333;
+}
+
+header {
+  background-color: #808080;
+  color: #d3d3d3;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #4caf50;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin: 0 auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button.submit {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  max-width: 500px;
+}
+
+button.submit:hover {
+  background-color: #45a049;
+}
+
+#contact-details p {
+  font-size: 1rem;
+  color: #555;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px 0;
+  background-color: #808080;
+  color: #d3d3d3;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+footer p {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+footer button {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 2px 2px 5px 1px #000;
+  transition: transform 0.3s linear;
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+footer button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}

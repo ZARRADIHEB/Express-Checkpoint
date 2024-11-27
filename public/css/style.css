@@ -6,21 +6,50 @@
 :root {
   --main-transition: 0.3s linear;
   --main-transform: scale(1.1);
-  --animation-duration: 5s;
+  --animation-duration: 2s;
   --animation-delay: 0.3s;
 }
+/* Scroll Bar */
+
+body {
+  --sb-track-color: #e6e6e6;
+  --sb-thumb-color: #5d5c5c;
+  --sb-size: 9px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+/* Page Style */
 body {
   background-color: #e6e6e6;
 }
 .navbar {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 62px;
 }
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-block: 20px;
-  background: rgba(93, 92, 92, 0.214);
+  background-color: #808080;
   backdrop-filter: blur(200px);
 }
 ul {
@@ -31,9 +60,9 @@ ul {
 
 nav a {
   text-decoration: none;
-  color: #000;
+  color: #d3d3d3;
   font-size: 1.2em;
-  transition: 0.3s linear;
+  transition: 0.1s linear;
   opacity: 0;
   transform: translateX(100%);
   animation: slideInFromRight var(--animation-duration) ease forwards;
@@ -61,13 +90,14 @@ ul li:nth-child(3) a {
   }
 }
 .navbar a:hover {
-  color: royalblue;
+  color: #19da23c2;
 }
 
 /* Home Page  */
 .hero-section {
   position: relative;
-  height: calc(100vh - 62.6px);
+  height: calc(100vh - 62px);
+  overflow: hidden;
 }
 .hero-section::before {
   position: absolute;
@@ -79,11 +109,11 @@ ul li:nth-child(3) a {
 }
 .hero-section img {
   width: 100%;
-  height: calc(100vh - 62.6px);
+  height: 100%;
 }
 .msg {
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, 50%);
   display: flex;
@@ -91,9 +121,10 @@ ul li:nth-child(3) a {
   justify-content: center;
   flex-direction: column;
   gap: 50px;
+  text-align: center;
   h1 {
     font-size: 3.5em;
-    color: #e6e6e6;
+    color: #d3d3d3;
   }
   button.scroll {
     font-size: 1.2em;
@@ -105,6 +136,10 @@ ul li:nth-child(3) a {
     transition: var(--main-transition);
     &:hover {
       transform: var(--main-transform);
+    }
+    a {
+      color: #333;
+      text-decoration: none;
     }
   }
 }

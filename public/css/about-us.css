@@ -1,0 +1,138 @@
+/* Scroll Bar */
+
+body {
+  --sb-track-color: #e6e6e6;
+  --sb-thumb-color: #5d5c5c;
+  --sb-size: 9px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+footer,
+header {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background-color: #e6e6e6;
+  color: #333;
+}
+
+header {
+  background: #808080;
+  color: #d3d3d3;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #4caf50;
+}
+
+section p,
+section ul {
+  font-size: 1rem;
+  color: #555;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+blockquote {
+  margin: 20px 0;
+  padding: 10px 20px;
+  border-left: 5px solid #4caf50;
+  background: #f1f1f1;
+  font-style: italic;
+  color: #555;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px 0;
+  background: #808080;
+  position: relative;
+}
+
+footer p {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #d3d3d3;
+}
+
+footer button {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 2px 2px 5px 1px #000;
+  transition: transform 0.3s linear;
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+footer button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
